@@ -1,0 +1,16 @@
+<HomeScreen@Screen>:
+    name: "home_screen"
+    MDRaisedButton:
+        text:'Logout'
+        pos_hint : {'center_x':0.9,'center_y':0.92}
+        size_hint: (0.13,0.1)
+        on_release:
+            app.root.transition.direction = 'right'
+            app.root.current = 'login_screen'
+
+    Image:
+        source: 'assets/img.png'
+        # Giving the size of image
+        size_hint: (1,1)
+        pos_hint : {'center_x':0.5,'center_y':0.4}
+        allow_stretch: True

@@ -1,0 +1,53 @@
+<SignInScreen@Screen>:
+    name: "login_screen"
+    MDLabel:
+        text:'Login'
+        font_style:'H2'
+        halign:'center'
+        pos_hint: {'center_y':0.9}
+
+    MDTextField:
+        id:email
+        pos_hint: {'center_y':0.6,'center_x':0.5}
+        size_hint : (0.7,0.1)
+        hint_text: 'Email'
+        helper_text:'Required'
+        helper_text_mode:  'on_error'
+        icon_right: 'account'
+        icon_right_color: app.theme_cls.primary_color
+        required: True
+        mode: "rectangle"
+
+    MDTextField:
+        id:password
+        pos_hint: {'center_y':0.4,'center_x':0.5}
+        size_hint : (0.7,0.1)
+        hint_text: 'Password'
+        helper_text:'Required'
+        helper_text_mode:  'on_error'
+        icon_right: 'account'
+        icon_right_color: app.theme_cls.primary_color
+        required: True
+        mode: "rectangle"
+
+    MDRaisedButton:
+        text:'Login'
+        size_hint: (0.13,0.07)
+        pos_hint: {'center_x':0.25,'center_y':0.25}
+        on_press:
+            root.signin()
+
+    MDTextButton:
+        text:'Reset Password'
+        size_hint: (0.20,0.07)
+        pos_hint: {'center_x':0.75,'center_y':0.25}
+        on_press:
+            root.manager.current = 'restore_screen'
+            root.manager.transition.direction = 'left'
+
+    MDRaisedButton:
+        text: 'Create an account'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press:
+            root.manager.current = 'signup_screen'
+            root.manager.transition.direction = 'up'
